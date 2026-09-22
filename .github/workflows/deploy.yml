@@ -63,6 +63,8 @@ jobs:
 
           ssh -i ~/.ssh/deploy gr-${SLUG}@gr.lab.ayty.org gr-docker network connect dados api
 
+          ssh -i ~/.ssh/deploy gr-${SLUG}@gr.lab.ayty.org gr-docker restart api
+
           ssh -i ~/.ssh/deploy gr-${SLUG}@gr.lab.ayty.org gr-docker run gr-atv2-front:1 \
             --name front \
             --network web \
